@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Gallery</title>
+  </head>
+  <body class="gallery-page fade">
+    <div class="bg-title">
+      <h1><span class="special">G</span>allery.</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Gallery.html" class="active">Gallery</a></li>
+          <li><a href="Blog.php">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="Gallery-page">
+      <h2>These are some photos that relate to the course I am taking</h2>
+      <div class="gallery">
+        <img src="Foto/IT-2.jpeg" onclick="openImage(this)" />
+        <img src="Foto/IT-3.jpeg" onclick="openImage(this)" />
+        <img src="Foto/IT-4.jpeg" onclick="openImage(this)" />
+      </div>
+    </div>
+    <footer>
+      <p>© 2024 Made Narayindra. All rights reserved.</p>
+    </footer>
+
+    <!-- Overlay untuk gambar -->
+    <div class="overlay" id="overlay">
+      <div class="overlay-content">
+        <span class="close-btn" onclick="closeImage()">&times;</span>
+        <span class="prev-btn" onclick="prevImage()">&#10094;</span>
+        <img id="overlay-img" src="" />
+        <span class="next-btn" onclick="nextImage()">&#10095;</span>
+      </div>
+    </div>
+
+    <script>
+      var images = document.querySelectorAll(".gallery img");
+      var currentImageIndex;
+
+      // Fungsi untuk membuka gambar
+      function openImage(img) {
+        var overlay = document.getElementById("overlay");
+        var overlayImg = document.getElementById("overlay-img");
+        overlay.style.display = "block";
+        overlayImg.src = img.src;
+        currentImageIndex = Array.from(images).indexOf(img);
+      }
+
+      // Fungsi untuk menutup gambar
+      function closeImage() {
+        var overlay = document.getElementById("overlay");
+        overlay.style.display = "none";
+      }
+
+      // Fungsi untuk menampilkan gambar berikutnya
+      function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        var overlayImg = document.getElementById("overlay-img");
+        overlayImg.src = images[currentImageIndex].src;
+      }
+
+      // Fungsi untuk menampilkan gambar sebelumnya
+      function prevImage() {
+        currentImageIndex =
+          (currentImageIndex - 1 + images.length) % images.length;
+        var overlayImg = document.getElementById("overlay-img");
+        overlayImg.src = images[currentImageIndex].src;
+      }
+    </script>
+  </body>
+</html>

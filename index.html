@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Welcome</title>
+  </head>
+  <body class="home-page fade">
+    <div class="bg-title">
+      <h1><span class="special">Y</span>indra.</h1>
+      <nav class="navbar">
+        <ul class="navbar-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="Gallery.html">Gallery</a></li>
+          <li><a href="Blog.php">Blog</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="Home-page" id="homePage">
+      <h2>Haii!!</h2>
+      <img src="Foto/Profile-Pic.jpg" class="profile-image" />
+      <p class="intro-text">
+        Allow me to introduce myself, I am Made Narayindra, a passionate 4th
+        semester IT student hailing from the prestigious Sam Ratulangi
+        University, nestled in the heart of North Sulawesi. I am on a thrilling
+        journey in the realm of technology, eager to learn and grow each day. In
+        projects, I typically take on the role of a frontend developer, bringing
+        designs to life with my coding skills.
+      </p>
+      <h2 class="projects-heading">Here are some of my recent projects:</h2>
+      <ul class="projects-list">
+        <li class="special-project">
+          Frontend on Reservation Website Project (WarongWarem)
+          <img src="Foto/Some-Project.jpg" class="project-image" />
+        </li>
+      </ul>
+    </div>
+    <footer>
+      <p>© 2024 Made Narayindra. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const profilePic = document.querySelector(".profile-image");
+        profilePic.addEventListener("click", function () {
+          if (confirm("Mau mutualan? Langsung aja ke halaman Contact")) {
+            window.location.href = "Contact.html";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
